@@ -7,7 +7,7 @@ import * as expressWinston from "express-winston";
 import * as winston from "winston";
 
 import { CommonRoutesConfig } from "@/common/common.routes.config";
-import { UsersRoutes } from "@/users/users.routes.config";
+import { UserRoutes } from "@/users/user.routes.config";
 
 const app: express.Application = express();
 const server: http.Server = http.createServer(app);
@@ -28,7 +28,7 @@ app.use(
   })
 );
 
-routes.push(new UsersRoutes(app));
+routes.push(new UserRoutes(app));
 
 app.use(
   expressWinston.errorLogger({
